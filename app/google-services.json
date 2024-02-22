@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "480142030510",
+    "firebase_url": "https://ttc-tranning-helper-49ec7-default-rtdb.firebaseio.com",
+    "project_id": "ttc-tranning-helper-49ec7",
+    "storage_bucket": "ttc-tranning-helper-49ec7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480142030510:android:c917554f4f3f33425bdf3f",
+        "android_client_info": {
+          "package_name": "com.mksoluation.ttcskillbook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSLqt8O41UqlzAqtWA3vRyhJs09bGO3Ys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

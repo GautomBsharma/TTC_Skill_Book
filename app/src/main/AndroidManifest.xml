@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/tranning_skills"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TTCSkillBook"
+        tools:targetApi="31">
+        <activity
+            android:name=".KoreanModule1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LearnLanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JapaniMod1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguadgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddNotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConstructionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GarmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RefrigerationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeldingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddLearnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ElectricalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddToolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddSignalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlumbingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrivingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
