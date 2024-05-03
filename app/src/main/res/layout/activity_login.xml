@@ -87,7 +87,8 @@ tools:context=".LoginActivity">
                 android:id="@+id/logEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="48dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -119,7 +120,7 @@ tools:context=".LoginActivity">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-
+                android:paddingStart="48dp"
                 />
 
 

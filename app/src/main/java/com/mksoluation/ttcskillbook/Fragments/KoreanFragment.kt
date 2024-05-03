@@ -45,6 +45,12 @@ class KoreanFragment : Fragment() {
             intent.putExtra("MODULE_NAME","Korean_module_five")
             startActivity(intent)
         }
+        binding.cardModule6.setOnClickListener {
+            val intent = Intent(requireContext(), LearnLanguageActivity::class.java)
+            intent.putExtra("MODULE_NAME","Korean_module_six")
+            startActivity(intent)
+        }
+
 
         return binding.root
     }

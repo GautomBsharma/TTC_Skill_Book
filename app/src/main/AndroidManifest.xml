@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TTCSkillBook"
         tools:targetApi="31">
+
+
         <activity
             android:name=".KoreanModule1Activity"
             android:exported="false" />
@@ -24,11 +26,14 @@
             android:name=".LanguageActivity"
             android:exported="false" />
         <activity
-            android:name=".LanguadgeActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".AddNotificationActivity"
             android:exported="false" />
@@ -64,16 +69,15 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5751411300460382~5201945855"/>
     </application>
 
 </manifest>

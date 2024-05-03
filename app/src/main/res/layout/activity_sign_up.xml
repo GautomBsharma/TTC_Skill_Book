@@ -89,7 +89,8 @@ tools:context=".SignUpActivity">
                 android:id="@+id/sinName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:paddingStart="48dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -111,7 +112,8 @@ tools:context=".SignUpActivity">
                 android:id="@+id/sinEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:paddingStart="48dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -143,7 +145,7 @@ tools:context=".SignUpActivity">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-
+                android:paddingStart="48dp"
                 />
 
 

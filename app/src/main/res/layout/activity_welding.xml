@@ -5,30 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeldingActivity">
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayoutp"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        app:tabIndicatorGravity="stretch"
-        app:tabIndicatorAnimationMode="elastic"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@null"
-        style="@style/Widget.MaterialComponents.TabLayout"
-        app:tabTextAppearance="@style/TabTextAppearance"
-        app:tabIndicator="@drawable/tab_indicator"
-        app:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPagerp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSignalwel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayoutp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/tool_item" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addTool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:src="@drawable/round_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

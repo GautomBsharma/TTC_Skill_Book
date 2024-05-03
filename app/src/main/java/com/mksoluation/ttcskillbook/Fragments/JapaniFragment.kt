@@ -44,6 +44,11 @@ class JapaniFragment : Fragment() {
             intent.putExtra("MODULE_NAME","Japani_module_five")
             startActivity(intent)
         }
+        binding.cardModule5.setOnClickListener {
+            val intent = Intent(requireContext(),LearnLanguageActivity::class.java)
+            intent.putExtra("MODULE_NAME","Japani_module_six")
+            startActivity(intent)
+        }
 
 
         return binding.root

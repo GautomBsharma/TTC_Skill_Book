@@ -1,13 +1,19 @@
 package com.mksoluation.ttcskillbook.Fragments
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,19 +39,27 @@ class SignalFragment : Fragment() {
         binding= FragmentSignalBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
-
+        MobileAds.initialize(requireContext()) {}
         signalList = ArrayList()
         adapter = SignalAdapter(requireContext(), signalList!!)
         binding.recyclerSignal.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerSignal.adapter = adapter
-
+        binding.recyclerSignal.setHasFixedSize(true)
+        if (isNetworkAvailable(requireContext())) {
+            // Internet is available, retrieve data
+            getSignal()
+        } else {
+            // No internet connection, show dialog
+            showNoInternetDialog()
+        }
         binding.addSignal.setOnClickListener {
             startActivity(Intent(requireContext(),AddSignalActivity::class.java))
         }
+        val adRequest = AdRequest.Builder().build()
+        binding.adViewttcBanner2.loadAd(adRequest)
+
 
         getAdmin(uid)
-        getSignal()
-
 
 
         return binding.root
@@ -123,5 +137,26 @@ class SignalFragment : Fragment() {
             return networkInfo != null && networkInfo.isConnected
         }
     }*/
+    private fun isNetworkAvailable(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork
+        val capabilities = connectivityManager.getNetworkCapabilities(network)
+        return capabilities != null &&
+                (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                        capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))
+    }
+    private fun showNoInternetDialog() {
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("No Internet Connection")
+            .setMessage("Please check your internet connection and try again.")
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setCancelable(false)
+            .create()
+
+        dialog.show()
+    }
 
 }

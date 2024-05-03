@@ -7,15 +7,25 @@
     tools:context=".LearnLanguageActivity">
 
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-5751411300460382/5880101697"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/learnlangrecye"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/language"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/adView1"
+        tools:listitem="@layout/language" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addLearnJapani"
         android:layout_width="wrap_content"
